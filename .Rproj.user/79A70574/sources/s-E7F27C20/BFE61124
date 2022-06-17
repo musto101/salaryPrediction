@@ -1,26 +1,27 @@
 {
-    "id": "7E3B260E",
-    "path": "~/workspace/musto_analytics/salary_regression.R",
+    "id": "BFE61124",
+    "path": null,
     "project_path": null,
     "type": "r_source",
     "hash": "0",
     "contents": "",
-    "dirty": false,
-    "created": 1655465719237.0,
+    "dirty": true,
+    "created": 1655466544297.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 3,
     "properties": {
+        "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "11,46",
-        "scrollLine": "5"
+        "cursorPosition": "6,12",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1655465777,
-    "encoding": "UTF-8",
+    "lastKnownWriteTime": 2524949706730991470,
+    "encoding": "",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1655465777190,
+    "last_content_update": 1655466721203,
     "read_only": false,
     "read_only_alternatives": []
 }

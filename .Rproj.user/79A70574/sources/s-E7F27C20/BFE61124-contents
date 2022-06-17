@@ -1,0 +1,7 @@
+options(scipen = 1000)
+
+dat <- read.csv(file = 'data/past_salaries.csv')
+
+fit <- fit_regression_model(dat, type = 'poly')
+
+summary(fit)
