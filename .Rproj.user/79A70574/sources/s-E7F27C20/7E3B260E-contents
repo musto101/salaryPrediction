@@ -1,0 +1,45 @@
+library(car)
+library(ggplot2)
+options(scipen = 10000)
+
+earnings <- data.frame(job_num = 1:8,
+                       year = c(2014, 2015, 2017, 2018, 2019, 2020, 2021, 2022),
+                       salary = c(30000, 35000, 45000, 50000, 55000, 65000,
+                                  87000, 90000))
+
+write.csv(earnings, 'data/past_salaries.csv')
+
+fit <- lm(salary ~ year + I(year^2), earnings)
+
+# summary(fit)
+#
+# plot(earnings$year, earnings$salary)
+# abline(fit)
+
+#use model to get predicted values
+plot(earnings$year, earnings$salary, pch=16, cex=1.5)
+
+#fit polynomial regression model
+
+#use model to get predicted values
+pred <- predict(fit)
+ix <- sort(earnings$year, index.return=T)$ix
+
+#add polynomial curve to plot
+lines(earnings$year[ix], pred[ix], col='red', lwd=2)
+test <- data.frame(year = 2023:2049)
+
+pred <- predict(fit, test)
+
+predicted <- data.frame(year = test$year, predicted_salary = pred)
+
+ggplot(predicted, aes(x = year, y = predicted_salary)) + geom_line()+
+  scale_y_continuous(labels=scales::dollar_format(prefix = '£'))
+
+fit2 <- lm(salary ~ year, earnings)
+
+pred2 <- predict(fit2, test)
+
+predicted2 <- data.frame(year = test$year, predicted_salary = pred2)
+
+
